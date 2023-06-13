@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "chrome-extension-test",
+    "description": "Testing Plugin",
+    "version": "1.0",    
+    "content_scripts":[
+        {
+        "matches":[
+            "<all_urls>"
+        ],
+        "js": ["main.js"]
+        }
+    ],    
+    "action": {
+        "default_icon": "icon.jpg",
+        "default_popup": "popup.html",
+        "default_title": "Extension Test!"
+    },
+    "background": {
+        "service_worker": "background.js"      
+    },
+    "permissions": [
+        "activeTab",
+        "storage",    
+        "tabs",
+        "storage"
+    ]
+}
