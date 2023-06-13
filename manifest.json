@@ -1,27 +1,14 @@
 {
     "manifest_version": 3,
-    "name": "chrome-extension-test",
-    "description": "Testing Plugin",
-    "version": "1.0",    
-    "content_scripts":[
-        {
-        "matches":[
-            "<all_urls>"
-        ],
-        "js": ["main.js"]
-        }
-    ],    
+    "name": "TabBuddy",
+    "description": "TabBuddy saves your tabs for later use.",
+    "version": "1.0",         
     "action": {
-        "default_icon": "icon.jpg",
+        "default_icon": "icon.png",
         "default_popup": "popup.html",
         "default_title": "Extension Test!"
-    },
-    "background": {
-        "service_worker": "background.js"      
-    },
-    "permissions": [
-        "activeTab",
-        "storage",    
+    },    
+    "permissions": [         
         "tabs",
         "storage"
     ]

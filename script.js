@@ -10,7 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var loadButton = document.getElementById('button-load');
     loadButton.addEventListener('click', function() {
-        chrome.storage.local.get('data', function(data) {            
+        chrome.storage.local.get('data', function(data) {     
+            if (!data) {
+                alert('No Saved Tabs!')
+                return
+            }       
            JSON.parse(data["data"]).forEach((url, x) => {setTimeout(() => chrome.tabs.create({ url: url, active: false }), 500*x)})           
            
             
